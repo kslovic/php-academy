@@ -1,5 +1,7 @@
 <p><?php echo $message ?></p>
-<h1>Prijavnica za PHP akademiju</h1>
+<main>
+
+    <h1>Prijavnica za PHP akademiju</h1>
 
     <p>Prijavnica za prvo osječko izdanje PHP akademije koju Inchoo pokreće u suradnji s FERITom.</p>
     <p>Prijave traju do 10.10., pa požuri i svoje mjesto rezerviraj već sad.</p>
@@ -8,42 +10,42 @@
     </p>
 
     <!-- fix form -->
-    <form method="post" action="form.php">
-    <label for="name">Ime i prezime</label>
+	
+    <form method="post" action="submit" enctype="multipart/form-data">
+    <label for="name">Ime i prezime:</label>
     <input id="name" placeholder="npr.Kristina Slović" name="name" required/>
 
-    <label for="email">Mail adresa</label>
+    <label for="email">Mail adresa:</label>
     <input id="email" placeholder="npr. kslovic@etfos.hr "name="email" type="email" required/>
 
-    <label for="smjer">Smjer</label>
+    <label for="smjer">Smjer:</label>
     <input id="smjer" placeholder="npr. Diplomski studij računarstva" name="smjer" required/>
 
-    <label>Godina studija</label>
-    <div class="radio">
-        <label><input name="godina" type="radio" value="1"/><span>1</span></label>
-    <label><input name="godina" type="radio" value="2"/><span>2</span></label>
-    <label><input name="godina" type="radio" value="3"/><span>3</span></label>
-    <label><input name="godina" type="radio" value="4"/><span>4</span></label>
-    <label><input name="godina" type="radio" value="5"/><span>5</span></label>
-    </div>
+    <label>Godina studija:</label><br>
+    <label><input name="godina" type="radio" value="1" checked/>1</label>
+    <label><input name="godina" type="radio" value="2"/>2</label>
+    <label><input name="godina" type="radio" value="3"/>3</label>
+    <label><input name="godina" type="radio" value="4"/>4</label>
+    <label><input name="godina" type="radio" value="5"/>5</label>
+    
     <label>Što te motiviralo da se prijaviš?</label>
-    <textarea required rows="10" cols="60">
+    <textarea name="motivacija"required rows="10" cols="60">
 
     </textarea>
 
 
     <label>Imaš li predznanje vezano uz web development?</label>
-    <textarea required rows="10" cols="60">
+    <textarea name="predznanje" required rows="10" cols="60">
 
     </textarea>
 
     U kojim jezicima si do sada programirao?
-    <label><input name="godina" type="checkbox" value="C"/>C</label>
-    <label><input name="godina" type="checkbox" value="C#"/>C#</label>
+    <label><input name="jezik[]" type="checkbox" value="C"/>C</label>
+    <label><input name="jezik[]" type="checkbox" value="C#"/>C#</label>
+	<label><input name="jezik[]" type="checkbox" value="C++"/>C++</label>
+    <label><input name="jezik[]" type="checkbox" value="Java"/>Java</label><br>
+	Uploadaj primjer svoga koda:
+    <input type="file" name="code"/>
+	 <input type="submit" name="prijava" value="Predaj prijavu"/>
     </form>
-    
-    <form method="post" action="form.php"  enctype="multipart/form-data">
-    Uploadaj primjer svoga koda:
-    <input type="file"/>
-    <input type="submit" value="Uploadaj datoteku"/>
-    </form>
+</main>

@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule (.*) index.phtml [L,E=PATH_INFO:/$1]
+RewriteRule (.*) form.phtml [L,E=PATH_INFO:/$1]
+RewriteRule (.*) submit.phtml [L,E=PATH_INFO:/$1]
+RewriteRule (.*) success.phtml [L,E=PATH_INFO:/$1]
+
+</IfModule>

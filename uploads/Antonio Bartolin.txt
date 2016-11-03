@@ -1,0 +1,9 @@
+Ime i prezime:Antonio Bartolin
+E-mail:a.bartolin4@gmail.com
+Smjer:diplomski studij računarstva
+Godina:4
+Što te motiviralo da se prijaviš?aldjassas
+    
+Imaš li predznanje vezano uz web development?asasad
+    
+U kojim jezicima si do sada programirao? C C# C++ 

@@ -12,7 +12,7 @@ class IndexController
         $view = new View();
         //$view->layout('layout');
         $view->render('index', [
-            'message' => 'This is message passed from controller.'
+            'message' => ''
         ]);
     }
 

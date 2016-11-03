@@ -1,0 +1,48 @@
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <errno.h>
+
+#ifndef BUF_SIZE
+#define BUF_SIZE 256
+#endif
+
+int main (int argc, char *argv [])
+{
+      int input_fd, output_fd;
+      ssize_t bytes_in, bytes_out;
+      char rec [BUF_SIZE];
+      if (argc != 3) {
+            printf ("Usage: cp file1 file2\n");
+            return 1;
+      }
+      input_fd = open (argv [1], O_RDONLY);
+      if (input_fd == -1) {
+            perror (argv [1]);
+            return 2;
+      }
+      output_fd = open (argv [2], O_WRONLY | O_CREAT, 0666);
+      if (output_fd == -1) {
+            perror (argv [2]);
+            return 3;
+      }
+
+/* Process the input file a record at a time. */
+
+      struct timeval tv1, tv2;
+	  gettimeofday(&tv1, NULL);
+      while ((bytes_in = read (input_fd, &rec, BUF_SIZE)) > 0) {
+            bytes_out = write (output_fd, &rec, (size_t)bytes_in);
+            if (bytes_out != bytes_in) {
+                 perror ("Fatal write error.");
+                 return 4;
+            }
+      }
+	  gettimeofday(&tv2, NULL);
+      close (input_fd);
+      close (output_fd);
+	  printf("%g\n", (float) (tv2.tv_usec - tv1.tv_usec + 
+				  1000000 * (tv2.tv_sec - tv1.tv_sec))/1000);
+      return 0;
+}

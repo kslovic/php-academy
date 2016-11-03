@@ -10,7 +10,7 @@ class FormController
            $view = new View();
         //$view->layout('layout');
         $view->render('form', [
-            'message' => 'This is index.'
+            'message' => ''
         ]);
     }
 
@@ -21,8 +21,8 @@ class FormController
     {
          $view = new View();
         //$view->layout('layout');
-        $view->render('form', [
-            'message' => 'This is submit.'
+        $view->render('submit', [
+            'message' => ''
         ]);
     }
 

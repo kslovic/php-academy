@@ -1,0 +1,9 @@
+Ime i prezime:ivan bartolin
+E-mail:i.bartolin@hotmail.com
+Smjer:diplomski studij računarstva
+Godina:4
+Što te motiviralo da se prijaviš?Motiviral...
+    
+Imaš li predznanje vezano uz web development?Imam..
+    
+U kojim jezicima si do sada programirao? C C# C++ 

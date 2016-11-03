@@ -1,0 +1,9 @@
+Ime i prezime:Sara Slović
+E-mail:a.bartolin4@gmail.com
+Smjer:diplomski studij računarstva
+Godina:2
+Što te motiviralo da se prijaviš?Motivirala me anananannana
+    
+Imaš li predznanje vezano uz web development?Imam predznanje iz...
+    
+U kojim jezicima si do sada programirao? C# 
